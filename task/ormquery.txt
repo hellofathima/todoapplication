@@ -1,0 +1,11 @@
+from task.models import Todos
+Book.objects.create(name="oliver twist",author="Dickens",price=500,publisher="Penguine Classics")
+qs=Book.objects.filter(id=3).update(author="Shakespere")
+qs=Book.objects.get(author="Austen") 
+qs=Book.objects.filter(author__in=["Dickens","Austen"]).count()  
+qs=Book.objects.filter(id=1).delete()
+qs=Book.objects.filter(price__gte=500,price__lte=1000) 
+qs=Book.objects.all().values("name")
+qs=Todos.objects.all().exclude(user="appu")
+qs=Book.objects.all().exclude(name="Emma")
+
